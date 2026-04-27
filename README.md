@@ -64,7 +64,7 @@ This confirms you are running OpenJDK 21.
 
 #### b) Verify that IntelliJ IDEA supports Maven projects
 
-Go to `File → New → Project → Build System` and confirm that **Maven** appears as an option (as shown in the screenshot below).
+Go to `File → New → Project → Build System` and confirm that **Maven** appears as an option and your JDK is one of JDKs 8 through 21 (as shown in the screenshot below).
 
 ![Step_1_Photo_1.png](readme-photos/Step_1_Photo_1.png)
 
