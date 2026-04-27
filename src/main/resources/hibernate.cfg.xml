@@ -13,11 +13,11 @@
 
         <!-- Oracle XE connection URL -->
         <property name="connection.url">
-            jdbc:oracle:thin:@//localhost:1521
+            jdbc:oracle:thin:@//HOST:PORT
         </property>
 
-        <property name="connection.username">hr</property>
-        <property name="connection.password">hr</property>
+        <property name="connection.username">USERNAME</property>
+        <property name="connection.password">PASSWORD</property>
 
         <!-- SQL dialect for Oracle -->
         <property name="dialect">
