@@ -21,7 +21,7 @@ public class Employee implements Serializable {
             generator = "emp_seq")
     @SequenceGenerator(
             name         = "emp_seq",
-            sequenceName = "hr.employees_seq",
+            sequenceName = "employees_seq",
             allocationSize = 1)
     @Column(name = "employee_id")
     private Integer employeeId;
