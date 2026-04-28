@@ -125,6 +125,27 @@ In this example: **username** = `hr`, **password** = `hr`.
 
 > **Note:** If you have forgotten your password, you must create a new user via `SQL*Plus`. This is your own responsibility.
 
+#### e) Check that the schema you added is what is in **[hr_schema.txt](DBSchema/hr_schema.txt)**
+
+Open SQL Developer and connect to your connection, then write `SELECT * FROM employees` like this:
+
+![Step_1_Photo_6.png](readme-photos/Step_1_Photo_6.png)
+
+Press `Ctrl + Enter` (**Windows** / **Linux**) or `Command + Enter` (**macOS**). If the Query Result appears like this, your schema is in your database:
+
+![Step_1_Photo_7.png](readme-photos/Step_1_Photo_7.png)
+
+If an error appears (**ORA-00942: table or view does not exist**) like this, you need to add the schema [hr_schema.txt](DBSchema/hr_schema.txt) in SQL Developer:
+
+![Step_1_Photo_8.png](readme-photos/Step_1_Photo_8.png)
+
+To add this schema, paste the content of our schema into SQL Developer, then press `F5`.
+- If the Script Output appears like this, your schema has been added and you can go to step 2:
+
+![Step_1_Photo_9.png](readme-photos/Step_1_Photo_9.png)
+
+> **Note:** If the Script Output prints errors on your screen, you may need to edit your user's credentials via `SQL*Plus`. This is your own responsibility.
+
 ---
 
 ### Step 2: Create a Maven Project in IntelliJ IDEA
@@ -279,4 +300,4 @@ Process finished with exit code 0
 
 ---
 
-*Made by [@areda04](https://github.com/areda04) — Good luck!*
+*Made by Ahmed R. Ibrahim **([@areda04](https://github.com/areda04))** — Good luck!*
