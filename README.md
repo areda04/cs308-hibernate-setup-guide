@@ -6,7 +6,7 @@
 
 - This guide is for **educational purposes only** (i.e., studying/training) — do not use it in production.
 
-```c
+```
 #include <std_disclaimer.h>
 /*
  * I am not responsible for bricked software, dead SSDs, non-genuine OSes,
@@ -23,8 +23,8 @@
 
 - IntelliJ IDEA (any version)
 - Internet connection (for downloading Maven repositories)
-- Java 8 through 21 (JDK 22 and above are **not** supported)
-- A valid Oracle Database XE (**Docker version only** is supported)
+- Java 8 through 21 (JDK 22 and above are **not** compatible)
+- A valid Oracle Database XE (**Docker version** or **Local version** whatever)
 - SQL Developer (for adding the database schema and connecting a user)
 - Some patience to get the setup working
 
@@ -32,7 +32,7 @@
 
 ## Setup Steps
 
-### Step 1: Configure JDK, IntelliJ IDEA, Oracle Container & SQL Developer
+### Step 1: Configure JDK, IntelliJ IDEA, Oracle Database & SQL Developer
 
 #### a) Verify your JDK version (must be 8 through 21)
 
@@ -68,7 +68,13 @@ Go to `File → New → Project → Build System` and confirm that **Maven** app
 
 ![Step_1_Photo_1.png](readme-photos/Step_1_Photo_1.png)
 
-#### c) Start your Oracle Docker container and note the host and port
+
+---
+> - If you installed Oracle via Docker (for All OSes), follow step **(c)** below and skip step **(d)**.
+> - If you installed Oracle directly on your device (via `.exe` or `.msi`) (for **Windows** only), follow step **(d)** and skip step **(c)**.
+---
+
+#### c) Start your Oracle Docker container and note the host and port (Linux / macOS / Windows)
 
 **On Linux / macOS:**
 
@@ -107,7 +113,45 @@ Open Docker Desktop, start your Oracle container, then click **Containers** in t
 Example output: `http://localhost:9000`
 - **host** = `localhost`, **port** = `9000`
 
-#### d) Retrieve your SQL Developer username and password
+#### d) Start your Oracle Database on your device and note the host and port (Windows only)
+---
+
+* Verify your installation by opening Command Prompt (Windows) and running:
+```
+sqlplus / as sysdba
+```
+If the output looks like the screenshot below:
+![Step_1_Photo_b.png](readme-photos/Step_1_Photo_b.png)
+then Oracle Database is installed.
+
+If the output looks like this (no `SQL>` prompt appears):
+![Step_1_Photo_a.png](readme-photos/Step_1_Photo_a.png)
+then you need to install **Oracle Database 21c (XE)** from this link: [Oracle Database 21c Express Edition (XE)](https://download.oracle.com/otn-pub/otn_software/db-express/OracleXE213_Win64.zip)
+> **Note:** You must create a new user after installing Oracle Database via `SQL*Plus`. This is your own responsibility.
+
+After confirming that Oracle Database is installed on your device, retrieve the host and port as follows.
+
+* Open Command Prompt (Windows) and run:
+```
+lsnrctl start
+```
+or
+```
+lsnrctl status
+```
+It outputs **Listeners** and other details as shown below:
+![Step_1_Photo_c.png](readme-photos/Step_1_Photo_c.png)
+Find the line containing `ADDRESS=(PROTOCOL=tcp)` as indicated below:
+![Step_1_Photo_d.png](readme-photos/Step_1_Photo_d.png)
+From this line:
+```
+Listening on: (DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=127.0.0.1)(PORT=1521)))
+```
+Extract the host and port as follows:
+- After `HOST`: **host** = `127.0.0.1`
+- After `PORT`: **port** = `1521`
+
+#### e) Retrieve your SQL Developer username and password
 
 Open SQL Developer and click the **+** button in the top-left corner.
 
@@ -125,7 +169,7 @@ In this example: **username** = `hr`, **password** = `hr`.
 
 > **Note:** If you have forgotten your password, you must create a new user via `SQL*Plus`. This is your own responsibility.
 
-#### e) Check that the schema you added is what is in **[hr_schema.txt](DBSchema/hr_schema.txt)**
+#### f) Check that the schema you added is what is in **[hr_schema.txt](DBSchema/hr_schema.txt)**
 
 Open SQL Developer and connect to your connection, then write `SELECT * FROM employees` like this:
 
