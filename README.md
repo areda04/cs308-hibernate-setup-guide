@@ -182,7 +182,7 @@ Open SQL Developer and connect to your connection, then write `SELECT * FROM emp
 
 ![Step_1_Photo_6.png](readme-photos/Step_1_Photo_6.png)
 
-Press `Ctrl + Enter` (**Windows** / **Linux**) or `Command + Enter` (**macOS**). If the Query Result appears like this, your schema is in your database:
+Press `Ctrl + Enter` (**Windows** / **Linux**). If the Query Result appears like this, your schema is in your database:
 
 ![Step_1_Photo_7.png](readme-photos/Step_1_Photo_7.png)
 
