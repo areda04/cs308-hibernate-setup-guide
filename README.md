@@ -121,11 +121,14 @@ Example output: `http://localhost:9000`
 sqlplus / as sysdba
 ```
 If the output looks like the screenshot below:
+
 ![Step_1_Photo_b.png](readme-photos/Step_1_Photo_b.png)
 then Oracle Database is installed.
 
 If the output looks like this (no `SQL>` prompt appears):
+
 ![Step_1_Photo_a.png](readme-photos/Step_1_Photo_a.png)
+
 then you need to install **Oracle Database 21c (XE)** from this link: [Oracle Database 21c Express Edition (XE)](https://download.oracle.com/otn-pub/otn_software/db-express/OracleXE213_Win64.zip)
 > **Note:** You must create a new user after installing Oracle Database via `SQL*Plus`. This is your own responsibility.
 
@@ -140,9 +143,13 @@ or
 lsnrctl status
 ```
 It outputs **Listeners** and other details as shown below:
+
 ![Step_1_Photo_c.png](readme-photos/Step_1_Photo_c.png)
+
 Find the line containing `ADDRESS=(PROTOCOL=tcp)` as indicated below:
+
 ![Step_1_Photo_d.png](readme-photos/Step_1_Photo_d.png)
+
 From this line:
 ```
 Listening on: (DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=127.0.0.1)(PORT=1521)))
