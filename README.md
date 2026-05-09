@@ -365,7 +365,7 @@ Process finished with exit code 0
 ````
 
 - **Exit code 0** — setup is complete; Hibernate is working correctly. ✅
-- **Exit code 1** — an error occurred. Double-check your `username`, `password`, `port`, `host` and `servicename` values in `hibernate.cfg.xml`. ❌
+- **Exit code 1** — an error occurred. Double-check your `username`, `password`, `port`, `host` and `servicename` values in `hibernate.cfg.xml`. also see the error & solve it ❌
 
 ---
 
