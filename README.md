@@ -116,16 +116,16 @@ Example output: `http://localhost:9000`
 #### d) Start your Oracle Database on your device and note the host and port (Windows only)
 ---
 
-* Verify your installation by opening Command Prompt (Windows) and running:
+Verify your installation by opening Command Prompt (Windows) and running:
 ```
 sqlplus / as sysdba
 ```
-If the output looks like the screenshot below:
+- If the output looks like the screenshot below:
 
 ![Step_1_Photo_b.png](readme-photos/Step_1_Photo_b.png)
 then Oracle Database is installed.
 
-If the output looks like this (no `SQL>` prompt appears):
+- If the output looks like this (no `SQL>` prompt appears):
 
 ![Step_1_Photo_a.png](readme-photos/Step_1_Photo_a.png)
 
@@ -134,7 +134,7 @@ then you need to install **Oracle Database 21c (XE)** from this link: [Oracle Da
 
 After confirming that Oracle Database is installed on your device, retrieve the host and port as follows.
 
-* Open Command Prompt (Windows) and run:
+Open Command Prompt (Windows) and run:
 ```
 lsnrctl start
 ```
