@@ -130,7 +130,7 @@ then Oracle Database is installed.
 ![Step_1_Photo_a.png](readme-photos/Step_1_Photo_a.png)
 
 then you need to install **Oracle Database 21c (XE)** from this link: [Oracle Database 21c Express Edition (XE)](https://download.oracle.com/otn-pub/otn_software/db-express/OracleXE213_Win64.zip)
-> **Note:** You must create a new user after installing Oracle Database via `SQL*Plus`. follow this GitHub Repository ![Oracle/SQL Setup Guide](https://github.com/areda04/cs307-oracle-sql-setup-guide).
+> **Note:** You must create a new user after installing Oracle Database via `SQL*Plus`. follow this GitHub Repository ![for Linux (Step 5/6/7](https://github.com/areda04/cs307-oracle-sql-setup-guide).
 
 After confirming that Oracle Database is installed on your device, retrieve the host and port as follows.
 
@@ -174,7 +174,7 @@ Note your username and password from the connection details.
 
 In this example: **username** = `hr`, **password** = `hr`.
 
-> **Note:** If you have forgotten your password, you must create a new user via `SQL*Plus`. follow this GitHub Repository ![Oracle/SQL Setup Guide](https://github.com/areda04/cs307-oracle-sql-setup-guide).
+> **Note:** If you have forgotten your password, you must create a new user via `SQL*Plus`. follow this GitHub Repository ![for Linux (Step 5/6/7](https://github.com/areda04/cs307-oracle-sql-setup-guide).
 
 #### f) Check that the schema you added is what is in **[hr_schema.txt](DBSchema/hr_schema.txt)**
 
@@ -195,7 +195,7 @@ To add this schema, paste the content of our schema into SQL Developer, then pre
 
 ![Step_1_Photo_9.png](readme-photos/Step_1_Photo_9.png)
 
-> **Note:** If the Script Output prints errors on your screen, you may need to edit your user's credentials via `SQL*Plus`. follow this GitHub Repository ![Oracle/SQL Setup Guide](https://github.com/areda04/cs307-oracle-sql-setup-guide).
+> **Note:** If the Script Output prints errors on your screen, you may need to edit your user's credentials via `SQL*Plus`. follow this GitHub Repository ![for Linux (Step 5/6/7](https://github.com/areda04/cs307-oracle-sql-setup-guide).
 
 #### g) Edit the service name of your Oracle Database user's connection to 'XEPDB1'
 
