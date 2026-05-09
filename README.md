@@ -36,7 +36,7 @@
 
 #### a) Verify your JDK version (must be 8 through 21)
 
-Check your version by opening a terminal (Linux/macOS) or Command Prompt (Windows) and running:
+Check your version by opening a terminal (Linux) or Command Prompt (Windows) and running:
 
 ````
 java --version
@@ -59,7 +59,7 @@ OpenJDK 64-Bit Server VM Temurin-21.0.10+7 (build 21.0.10+7-LTS, mixed mode, sha
 This confirms you are running OpenJDK 21.
 
 - If your JDK is **22 or later**, you must install JDK 21 or lower (JDK 17 is recommended).
-  - **Windows / macOS:** Download from [Oracle Java SE Development Kit 17.0.12](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html) and install it.
+  - **Windows:** Download from [Oracle Java SE Development Kit 17.0.12](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html) and install it.
   - **Linux (Ubuntu/Debian):** Run `sudo apt install openjdk-17-jdk -y` in the terminal.
 
 #### b) Verify that IntelliJ IDEA supports Maven projects
@@ -70,13 +70,13 @@ Go to `File → New → Project → Build System` and confirm that **Maven** app
 
 
 ---
-> - If you installed Oracle via Docker (for All OSes), follow step **(c)** below and skip step **(d)**.
+> - If you installed Oracle via Docker (for **Linux**/**Windows**), follow step **(c)** below and skip step **(d)**.
 > - If you installed Oracle directly on your device (via `.exe` or `.msi`) (for **Windows** only), follow step **(d)** and skip step **(c)**.
 ---
 
-#### c) Start your Oracle Docker container and note the host and port (Linux / macOS / Windows)
+#### c) Start your Oracle Docker container and note the host and port (Linux / Windows)
 
-**On Linux / macOS:**
+**On Linux**
 
 After starting your Oracle container, run:
 
@@ -130,7 +130,7 @@ then Oracle Database is installed.
 ![Step_1_Photo_a.png](readme-photos/Step_1_Photo_a.png)
 
 then you need to install **Oracle Database 21c (XE)** from this link: [Oracle Database 21c Express Edition (XE)](https://download.oracle.com/otn-pub/otn_software/db-express/OracleXE213_Win64.zip)
-> **Note:** You must create a new user after installing Oracle Database via `SQL*Plus`. This is your own responsibility.
+> **Note:** You must create a new user after installing Oracle Database via `SQL*Plus`. follow this GitHub Repository ![Oracle/SQL Setup Guide](https://github.com/areda04/cs307-oracle-sql-setup-guide).
 
 After confirming that Oracle Database is installed on your device, retrieve the host and port as follows.
 
@@ -174,7 +174,7 @@ Note your username and password from the connection details.
 
 In this example: **username** = `hr`, **password** = `hr`.
 
-> **Note:** If you have forgotten your password, you must create a new user via `SQL*Plus`. This is your own responsibility.
+> **Note:** If you have forgotten your password, you must create a new user via `SQL*Plus`. follow this GitHub Repository ![Oracle/SQL Setup Guide](https://github.com/areda04/cs307-oracle-sql-setup-guide).
 
 #### f) Check that the schema you added is what is in **[hr_schema.txt](DBSchema/hr_schema.txt)**
 
@@ -195,7 +195,21 @@ To add this schema, paste the content of our schema into SQL Developer, then pre
 
 ![Step_1_Photo_9.png](readme-photos/Step_1_Photo_9.png)
 
-> **Note:** If the Script Output prints errors on your screen, you may need to edit your user's credentials via `SQL*Plus`. This is your own responsibility.
+> **Note:** If the Script Output prints errors on your screen, you may need to edit your user's credentials via `SQL*Plus`. follow this GitHub Repository ![Oracle/SQL Setup Guide](https://github.com/areda04/cs307-oracle-sql-setup-guide).
+
+#### g) Edit the service name of your Oracle Database user's connection to 'XEPDB1'
+
+After starting your Oracle Database (i.e. reaching to `SQL>`), run:
+
+````
+ALTER SESSION SET CONTAINER = XEPDB1;
+````
+
+if it outputs this:
+````
+SESSION ALTERED
+````
+so you can go to step 2.
 
 ---
 
@@ -262,15 +276,19 @@ Maven will automatically manage all Hibernate dependencies.
 
 Using the values obtained from **Step 1**:
 
-| Placeholder | Example value |
-|-------------|---------------|
-| `HOST`      | `localhost`   |
-| `PORT`      | `1521`        |
-| `USERNAME`  | `hr`          |
-| `PASSWORD`  | `hr`          |
+| Placeholder   | Example value |
+|---------------|---------------|
+| `HOST`        | `localhost`   |
+| `PORT`        | `1521`        |
+| `USERNAME`    | `hr`          |
+| `PASSWORD`    | `hr`          |
+| `SERVICENAME` | `XEPDB1`      |
 
 Make the following replacements:
-1. In `<property name="connection.url">` (**Line 16**), replace `HOST` with your host and `PORT` with your port.
+1. In `<property name="connection.url">` (**Line 16**),
+   - replace `HOST` with your host
+   - `PORT` with your port
+   - `SERVICENAME` with your service name (`XEPDB1` is default unless you changed it in `SQL*Plus`).
 2. In `<property name="connection.username">` (**Line 19**), replace `USERNAME` with your username.
 3. In `<property name="connection.password">` (**Line 20**), replace `PASSWORD` with your password.
 
@@ -347,7 +365,7 @@ Process finished with exit code 0
 ````
 
 - **Exit code 0** — setup is complete; Hibernate is working correctly. ✅
-- **Exit code 1** — an error occurred. Double-check your `username`, `password`, `port`, and `host` values in `hibernate.cfg.xml`. ❌
+- **Exit code 1** — an error occurred. Double-check your `username`, `password`, `port`, `host` and `servicename` values in `hibernate.cfg.xml`. ❌
 
 ---
 
