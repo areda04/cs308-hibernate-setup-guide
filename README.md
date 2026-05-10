@@ -19,6 +19,50 @@
 
 ---
 
+## 🗂️ Repository Structure
+```
+cs308-hibernate-setup-guide
+├── DBSchema
+│   └── hr_schema.txt
+├── LICENSE
+├── pom.xml
+├── README.md
+├── readme-photos
+│   ├── Step_1_Photo_1.png
+│   ├── Step_1_Photo_2.png
+│   ├── Step_1_Photo_3.png
+│   ├── Step_1_Photo_4.png
+│   ├── Step_1_Photo_5.png
+│   ├── Step_1_Photo_6.png
+│   ├── Step_1_Photo_7.png
+│   ├── Step_1_Photo_8.png
+│   ├── Step_1_Photo_9.png
+│   ├── Step_1_Photo_a.png
+│   ├── Step_1_Photo_b.png
+│   ├── Step_1_Photo_c.png
+│   ├── Step_1_Photo_d.png
+│   ├── Step_2_Photo_1.png
+│   ├── Step_3_Photo_1.png
+│   ├── Step_3_Photo_2.png
+│   └── Step_4b_Photo_1.png
+└── src
+    └── main
+        ├── java
+        │   └── com
+        │       └── sci
+        │           ├── dao
+        │           │   └── DBEmployee.java
+        │           ├── Main.java
+        │           ├── models
+        │           │   └── Employee.java
+        │           └── util
+        │               └── DBConfig.java
+        └── resources
+            └── hibernate.cfg.xml
+```
+
+---
+
 ## Requirements
 
 - IntelliJ IDEA (any version)
