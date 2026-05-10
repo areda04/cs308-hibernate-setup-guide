@@ -116,7 +116,7 @@ Example output: `http://localhost:9000`
 #### d) Start your Oracle Database on your device and note the host and port (Windows only)
 ---
 
-Verify your installation by opening Command Prompt (Windows) and running:
+Verify your installation by opening Command Prompt (as administrator) (Windows) and running:
 ```
 sqlplus / as sysdba
 ```
